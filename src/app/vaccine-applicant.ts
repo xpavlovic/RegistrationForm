@@ -4,7 +4,7 @@ export class VaccineApplicant {
     public surname: string,
     public idNumber: string,
     public email: string,
-    public phoneNumber: number,
+    public phoneNumber: string,
     public vaccine: string
   ) {}
 }

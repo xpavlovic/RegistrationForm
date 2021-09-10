@@ -1,4 +1,53 @@
 .container-fluid {
-  margin-left: 10%;
-  margin-right: 10%;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+.form-group {
+  margin-bottom: 3%;
+}
+
+.custom-select {
+  margin-top: 1%;
+}
+
+.selectType {
+  margin-left: 30%;
+}
+
+.btn,
+.btn-primary {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 80%;
+}
+h1 {
+  text-align: center;
+}
+#star {
+  color: red;
+}
+
+/* Displayed data from formular*/
+.data {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  border: 1px solid black;
+  width: 70%;
+  padding: 20px;
+  background-color: rgba(125, 185, 187, 0.767);
+  text-align: center;
+}
+#meno {
+  font-size: 2em;
+  font-weight: bold;
+  color: brown;
+}
+
+#info {
+  font-size: 1.5em;
+  font-weight: bold;
 }
