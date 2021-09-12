@@ -15,9 +15,6 @@ export class AppComponent {
 
   vaccineApplicant = new VaccineApplicant('', '', '', '', '', '');
 
-  //TODO
-  //add validation functions for email format and telephone number
-
   onSubmit(form: NgForm) {
     console.log(form.value);
     if (
