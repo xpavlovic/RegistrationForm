@@ -1,0 +1,103 @@
+<div class="container" fxLayout="column" fxLayoutAlign="space-evenly center">
+  <form
+    [formGroup]="myForm"
+    (ngSubmit)="onSubmit()"
+    class="form"
+    fxLayout="column"
+    fxLayoutAlign="space-evenly center"
+    fxLayoutGap="10px"
+  >
+    <div class="heading">
+      <h1 style="color: black">Registračný formulár na testovanie Covid-19</h1>
+    </div>
+
+    <!-- Name -->
+    <mat-form-field appearance="fill" fxFlexFill>
+      <mat-label>Meno</mat-label>
+      <input matInput placeholder="Janko" formControlName="name" required />
+      <mat-error *ngIf="getErrorMessage('name', 'required')">
+        Meno je povinne políčko
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Surname -->
+    <mat-form-field appearance="fill" fxFlexFill>
+      <mat-label>Priezvisko</mat-label>
+      <input matInput placeholder="Hrasko" formControlName="surname" required />
+      <mat-error *ngIf="getErrorMessage('surname', 'required')">
+        Priezvisko je povinne políčko
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Email -->
+    <mat-form-field appearance="fill" fxFlexFill>
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        placeholder="abc@gmail.com"
+        formControlName="email"
+        type="email"
+        required
+      />
+      <mat-error *ngIf="getErrorMessage('email', 'required')">
+        Email je povinne políčko
+      </mat-error>
+      <mat-error *ngIf="getErrorMessage('email', 'email')">
+        Nesprávny formát
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Rodne Cislo -->
+    <mat-form-field appearance="fill" fxFlexFill>
+      <mat-label>Rodné číslo</mat-label>
+      <input
+        matInput
+        placeholder="123456/7891"
+        formControlName="idNumber"
+        required
+      />
+      <mat-error *ngIf="getErrorMessage('idNumber', 'required')">
+        Rodné číslo je povinné políčko
+      </mat-error>
+      <mat-error *ngIf="getErrorMessage('idNumber', 'pattern')">
+        Nesprávny formát
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Telefonne cislo -->
+    <mat-form-field appearance="fill" fxFlexFill>
+      <mat-label>Telefónne číslo</mat-label>
+      <input
+        matInput
+        placeholder="+421 922 123 456"
+        formControlName="phone"
+        required
+      />
+      <mat-error *ngIf="getErrorMessage('phone', 'required')">
+        Telefónne číslo je povinné políčko
+      </mat-error>
+      <mat-error *ngIf="getErrorMessage('phone', 'pattern')">
+        Nesprávny formát
+      </mat-error>
+    </mat-form-field>
+
+    <!--typ Testu-->
+    <mat-form-field appearance="fill" fxFlexFill>
+      <mat-label>Typ testu</mat-label>
+      <mat-select formControlName="test">
+        <mat-option [value]="test" *ngFor="let test of tests"
+          >{{ test }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      type="submit"
+      [disabled]="!myForm.valid"
+      color="primary"
+    >
+      Submit
+    </button>
+  </form>
+</div>

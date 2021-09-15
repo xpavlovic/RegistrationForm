@@ -130,10 +130,25 @@
       </label>
     </div>
 
-    <button class="btn btn-primary" type="submit" (click)="onSubmit(form)">
+    <button
+      class="btn btn-primary"
+      type="submit"
+      (click)="onSubmit(form)"
+      [disabled]="!form.valid"
+    >
       Odoslať
     </button>
   </form>
+
+  <!--Reactive form-->
+  <button
+    *ngIf="showButtonForCovidForm"
+    mat-raised-button
+    color="primary"
+    (click)="registerForCovidTest()"
+  >
+    Testovanie na Covid-19
+  </button>
 </div>
 
 <!-- Display data after the submission -->
@@ -150,3 +165,6 @@
     Vakcína: {{ vaccineApplicant.vaccine }}
   </span>
 </div>
+
+<!--Reactive form-->
+<app-covid-test *ngIf="showCovidTestForm"></app-covid-test>
